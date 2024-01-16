@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.LoggedInPage"
+             Title="Számológép">
+    <StackLayout>
+        <Entry Keyboard="Numeric" WidthRequest="100" x:Name="Num1" ReturnType="Next" HorizontalTextAlignment="Center" />
+        <Picker x:Name="Operation"
+                Title="Operáció"
+                WidthRequest="150"
+                HorizontalTextAlignment="Center"
+                SelectedIndex="0" SelectedIndexChanged="Operation_OnSelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>+</x:String>
+                    <x:String>-</x:String>
+                    <x:String>*</x:String>
+                    <x:String>/</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Entry Keyboard="Numeric" WidthRequest="100" x:Name="Num2" HorizontalTextAlignment="Center" />
+        <Button Text="=" WidthRequest="40" Clicked="Button_OnClicked"></Button>
+        <Label HorizontalTextAlignment="Center" x:Name="Result">Eredmény:</Label>
+        <Image Margin="0,210,0,0" Source="maxwell_cat.gif" HeightRequest="241" WidthRequest="360" HorizontalOptions="Center" x:Name="Image1" Loaded="VisualElement_OnLoaded" />
+    </StackLayout>
+</ContentPage>
