@@ -4,11 +4,24 @@
              x:Class="MauiApp1.NewPage1"
              Title="Navigáció teszt">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
+        <Label x:Name="LSzam"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-
-        <Button Clicked="GoBackClicked" Text="Back"/>
+        <Entry x:Name="EtrBe" VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+        <Label Text="Beszúrás:"  VerticalOptions="Center" 
+               HorizontalOptions="Center"></Label>
+        <Entry x:Name="EtrIn" Keyboard="Numeric" VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+        <Button Clicked="GoBackClicked" Text="Back" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <HorizontalStackLayout>
+            <Button x:Name="BtnFelvitel" Clicked="GoAddClicked" Text="Felvitel" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button x:Name="BtnSave" Clicked="BtnSave_OnClicked" Text="Mentés" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button x:Name="BtnInsert" Clicked="BtnInsert_OnClicked" Text="Beszúrás" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button x:Name="BtnLoad" Clicked="BtnLoad_OnClicked" Text="Betöltés" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button x:Name="BtnClear" Clicked="BtnClear_OnClicked" Text="Kiürítés" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
+ 
+        <ListView x:Name="LwAdatok" VerticalOptions="Center" HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

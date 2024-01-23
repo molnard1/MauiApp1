@@ -4,7 +4,7 @@ namespace MauiApp1
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        public static int Count { get; set; }
 
         public MainPage()
         {
@@ -26,12 +26,12 @@ namespace MauiApp1
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
+            Count++;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            if (Count == 1)
+                CounterBtn.Text = $"Clicked {Count} time";
             else
-                CounterBtn.Text = $"Clicked {count} times";
+                CounterBtn.Text = $"Clicked {Count} times";
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
